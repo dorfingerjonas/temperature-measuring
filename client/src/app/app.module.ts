@@ -9,6 +9,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import player from 'lottie-web';
+import { LottieModule } from 'ngx-lottie';
+
+export function playerFactory(): any {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -21,9 +27,11 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'temperature'),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    LottieModule.forRoot({player: playerFactory}),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
