@@ -1,4 +1,4 @@
 export default interface Measuring {
-  temp: number;
+  temperature: number;
   timestamp: number;
 }
