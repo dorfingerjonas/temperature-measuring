@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import player from 'lottie-web';
 import { LottieModule } from 'ngx-lottie';
 import { HistoryComponent } from './components/history/history.component';
+import { FormatDatePipe } from './pipes/FormatDatePipe';
+import { FormatTemperaturePipe } from './pipes/FormatTempPipe';
 
 export function playerFactory(): any {
   return player;
@@ -21,7 +23,9 @@ export function playerFactory(): any {
   declarations: [
     AppComponent,
     CurrentTempComponent,
-    HistoryComponent
+    HistoryComponent,
+    FormatDatePipe,
+    FormatTemperaturePipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ export function playerFactory(): any {
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatIconModule,
-    LottieModule.forRoot({player: playerFactory}),
+    LottieModule.forRoot({player: playerFactory})
   ],
   providers: [],
   bootstrap: [AppComponent]
