@@ -4,7 +4,7 @@ import { CurrentTempComponent } from './components/current-temp/current-temp.com
 
 const routes: Routes = [
   {path: '', component: CurrentTempComponent},
-  {path: '**', component: CurrentTempComponent}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
