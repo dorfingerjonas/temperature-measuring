@@ -1,0 +1,24 @@
+{
+  "name": "temperature-measuring",
+  "version": "1.0.0",
+  "description": "water temperature measuring for our swimming pond at home",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorfingerjonas/temperature-measuring.git"
+  },
+  "author": "Jonas Dorfinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dorfingerjonas/temperature-measuring/issues"
+  },
+  "homepage": "https://github.com/dorfingerjonas/temperature-measuring#readme",
+  "dependencies": {
+    "firebase-admin": "^9.7.0",
+    "glob": "^7.1.6"
+  }
+}
