@@ -1,1 +1,13 @@
-<p>history works!</p>
+<ng-lottie *ngIf="showLoading" [options]="options"></ng-lottie>
+
+<div *ngIf="!showLoading">
+  <h2>History</h2>
+
+  <div *ngFor="let m of measures">
+    <p>{{ m.temperature | formatTemperature }} °C</p>
+    <p>{{ m.timestamp.toString() | formatDate }}</p>
+  </div>
+
+  <button>zurück</button>
+
+</div>
