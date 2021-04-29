@@ -3,8 +3,10 @@
 <div *ngIf="!showLoading">
   <h2>Aktuelle Temperatur</h2>
 
-  <span>{{ temperature }} °C</span>
-  <span>{{ time }}</span>
+  <div>
+    <span>{{ temperature! | formatTemperature }} °C</span>
+    <span>{{ time! | formatDate }}</span>
+  </div>
 
   <button routerLink="history"><mat-icon>history</mat-icon> History</button>
 </div>
