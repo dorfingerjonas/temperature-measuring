@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-current-temp',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentTempComponent implements OnInit {
 
-  constructor() { }
+  temperature?: string;
+  time?: string;
+  showLoading = true;
+  options: AnimationOptions = {
+    path: 'assets/animations/thermometer.json'
+  };
+
+  constructor(private db: AngularFireDatabase) {
+  }
 
   ngOnInit(): void {
+    this.db.object('temperature/currentTemperature').valueChanges().subscribe(value => {
+      this.showLoading = false;
+      const measuring: any = value;
+
+      if (measuring.temp && measuring.timestamp) {
+        const tempParts: string[] = measuring.temp.toString().split('.');
+
+        if (tempParts.length > 1) {
+          this.temperature = `${ tempParts[0] },${ Math.round(parseFloat(tempParts[1]) / 100) }`;
+        } else {
+          this.temperature = `${ measuring.temp },0`;
+        }
+
+        this.time = `${ this.formatDate(new Date(parseInt(measuring.timestamp, 0))) }`;
+      }
+    });
   }
 
   formatDate(date: Date): string {
