@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import player from 'lottie-web';
 import { LottieModule } from 'ngx-lottie';
+import { HistoryComponent } from './components/history/history.component';
 
 export function playerFactory(): any {
   return player;
@@ -19,7 +20,8 @@ export function playerFactory(): any {
 @NgModule({
   declarations: [
     AppComponent,
-    CurrentTempComponent
+    CurrentTempComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
