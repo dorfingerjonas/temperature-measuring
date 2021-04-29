@@ -1,1 +1,10 @@
-<p>current-temp works!</p>
+<ng-lottie *ngIf="showLoading" [options]="options"></ng-lottie>
+
+<div *ngIf="!showLoading">
+  <h2>Aktuelle Temperatur</h2>
+
+  <span>{{ temperature }} °C</span>
+  <span>{{ time }}</span>
+
+  <button routerLink="history"><mat-icon>history</mat-icon> History</button>
+</div>
