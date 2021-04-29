@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-url temperature-measuring --deploy-url temperature-measuring",
+    "build": "ng build --prod --deploy-url /temperature-measuring/ --base-href /temperature-measuring/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
