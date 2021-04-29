@@ -17,9 +17,17 @@ jobs:
         with:
           node-version: '12.x'
       - name: Install dependencies
-        run: cd client && npm i
+        run: |
+          echo pwd
+          cd client
+          echo pwd
+          npm ci
       - name: Build
-        run: cd client && npm run build
+        run: |
+          echo pwd
+          cd client
+          echo pwd
+          npm run build
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v1
