@@ -14,6 +14,8 @@ import { LottieModule } from 'ngx-lottie';
 import { HistoryComponent } from './components/history/history.component';
 import { FormatDatePipe } from './pipes/FormatDatePipe';
 import { FormatTemperaturePipe } from './pipes/FormatTempPipe';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 export function playerFactory(): any {
   return player;
@@ -34,6 +36,8 @@ export function playerFactory(): any {
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
     LottieModule.forRoot({player: playerFactory})
   ],
   providers: [],
