@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import Measuring from '../../model/measuring';
 import { AnimationOptions } from 'ngx-lottie';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-history',
@@ -16,7 +17,8 @@ export class HistoryComponent implements OnInit {
     path: 'assets/animations/thermometer.json'
   };
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase,
+              private location: Location) {
   }
 
   ngOnInit(): void {
@@ -31,5 +33,9 @@ export class HistoryComponent implements OnInit {
         }
       }
     });
+  }
+
+  back(): void {
+    this.location.back();
   }
 }
