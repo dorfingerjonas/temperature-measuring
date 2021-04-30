@@ -26,7 +26,7 @@ glob('/sys/bus/w1/devices/28*/w1*', (err, files) => {
     } else {
         console.error(err);
     }
-})
+});
 
 function createInterval(delay, filename) {
     return setInterval(() => {
