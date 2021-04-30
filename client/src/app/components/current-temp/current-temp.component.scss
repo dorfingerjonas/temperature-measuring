@@ -28,22 +28,18 @@
     }
 
     button {
+      position: fixed;
+      right: 3vw;
+      bottom: 5vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 20px;
-      color: #fff;
-      background: #91cfa1;
+      color: #353535;
       outline: none;
-      border-radius: 7px;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
-      font-size: 1.5em;
       user-select: none;
-
-      mat-icon {
-        margin: 0 .2em 0 0;
-      }
     }
   }
 }
