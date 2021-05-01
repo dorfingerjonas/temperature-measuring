@@ -8,6 +8,8 @@
     <p>{{ m.timestamp.toString() | formatDate }}</p>
   </div>
 
-  <button (click)="back()">zurück</button>
+  <button mat-icon-button id="backButton">
+    <mat-icon (click)="back()">arrow_back</mat-icon>
+  </button>
 
 </div>
