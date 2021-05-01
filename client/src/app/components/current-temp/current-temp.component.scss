@@ -1,46 +1,45 @@
 :host {
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  div {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  #temperature-wrapper {
+    margin-top: 10vh;
+    display: grid;
 
     h2 {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-column-end: 1;
+      grid-row-end: 1;
       font-weight: 500;
       font-size: 2em;
+      margin: 0 auto 5vh;
     }
 
     div {
-      height: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-row-start: 2;
+      grid-column-end: 1;
+      grid-row-end: 2;
 
       span:nth-child(1) {
         font-size: 4em;
         margin-bottom: 2vh;
       }
     }
+  }
 
-    button {
-      position: fixed;
-      right: 3vw;
-      bottom: 5vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #353535;
-      outline: none;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      user-select: none;
-    }
+  button {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+    color: #353535;
   }
 }
 
@@ -61,10 +60,6 @@
         span:nth-child(2) {
           font-size: 1.5em;
         }
-      }
-
-      button {
-        font-size: 2em;
       }
     }
   }
