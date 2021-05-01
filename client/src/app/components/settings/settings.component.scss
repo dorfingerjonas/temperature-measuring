@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  #settings {
+    margin-top: 10vh;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 2em;
+    margin: 0 auto 5vh;
+  }
+
+  #login-wrapper, #settings-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #settings-wrapper {
+    .settings-section {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      mat-hint {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+          margin-right: .3em;
+        }
+      }
+
+      button {
+        margin-top: 1vh;
+      }
+    }
+  }
+
+  #backButton, #logoutButton {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+  }
+
+  #logoutButton {
+    bottom: 6vh;
+  }
+}

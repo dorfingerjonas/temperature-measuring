@@ -1,0 +1,38 @@
+<ng-lottie *ngIf="showLoading" [options]="options"></ng-lottie>
+
+<div *ngIf="!showLoading" id="settings">
+  <h2>Einstellungen</h2>
+
+  <div *ngIf="!isLoggedIn" id="login-wrapper">
+    <mat-form-field>
+      <mat-label>PIN</mat-label>
+      <input matInput type="password" [(ngModel)]="pin" (keydown.enter)="login()" autocomplete="off" min="0">
+    </mat-form-field>
+
+    <button mat-button (click)="login()" [disabled]="!isPinValid()">Anmelden</button>
+  </div>
+
+  <div *ngIf="isLoggedIn" id="settings-wrapper">
+    <div class="settings-section">
+      <mat-form-field>
+        <mat-label>Mess-Intervall</mat-label>
+        <input matInput type="number" [(ngModel)]="interval" (keydown.enter)="saveInterval()" autocomplete="off"
+               min="0.1">
+        <mat-hint>
+          <mat-icon>info</mat-icon>
+          <span>Intervall in Minuten</span>
+        </mat-hint>
+      </mat-form-field>
+
+      <button mat-button (click)="saveInterval()" [disabled]="!isIntervalValid()">Speichern</button>
+    </div>
+  </div>
+
+  <button mat-icon-button id="logoutButton" [disabled]="!isLoggedIn">
+    <mat-icon (click)="logout()">logout</mat-icon>
+  </button>
+
+  <button mat-icon-button id="backButton">
+    <mat-icon (click)="back()">arrow_back</mat-icon>
+  </button>
+</div>
