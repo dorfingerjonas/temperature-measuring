@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1619870952174,
+  "timestamp": 1619871109260,
   "index": "/temperature-measuring/index.html",
   "assetGroups": [
     {
@@ -64,7 +64,7 @@
     "/temperature-measuring/favicon.ico": "7eaba77b2383c47c6442794b3ff03fecad1ef512",
     "/temperature-measuring/index.html": "f686fd88ad9751ad8828d6bb85fc2ec01fc25e6b",
     "/temperature-measuring/main.248be22842baaef13689.js": "1e9dbcca2078717efacd419bbc4b19e0a4796aea",
-    "/temperature-measuring/manifest.webmanifest": "6bd446cf481e91dc7da6926e0d9b5fb2029c63fa",
+    "/temperature-measuring/manifest.webmanifest": "975a45b507e4160522ca2bf4bec258e3ed2f9e57",
     "/temperature-measuring/polyfills.00096ed7d93ed26ee6df.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "/temperature-measuring/runtime.737d3b70d67c9072069d.js": "707486f64caac22fa16edeb146a910ffb064bca1",
     "/temperature-measuring/styles.749faf6110a8ec8be535.css": "a01d0606092b50fb4e1b1aadb4934ad9fbf77f5d"
