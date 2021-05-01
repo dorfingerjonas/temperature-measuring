@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.authState.subscribe(state => {
-      // this.showLoading = false;
+      this.showLoading = false;
       this.isLoggedIn = !!state;
     });
 
