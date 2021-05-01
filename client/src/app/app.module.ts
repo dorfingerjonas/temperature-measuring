@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function playerFactory(): any {
   return player;
@@ -48,7 +49,11 @@ export function playerFactory(): any {
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule,
-    LottieModule.forRoot({player: playerFactory})
+    LottieModule.forRoot({player: playerFactory}),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
