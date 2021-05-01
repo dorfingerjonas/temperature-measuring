@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AnimationOptions } from 'ngx-lottie';
-import { Location } from "@angular/common";
-import { MatSnackBar } from "@angular/material/snack-bar";
+import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-settings',
@@ -52,7 +52,7 @@ export class SettingsComponent implements OnInit {
       this.auth.signInWithEmailAndPassword('temperature@dorfingerjonas.at', this.pin.toString()).catch(e => {
         switch (e.code) {
           case 'auth/wrong-password':
-            this.snackBar.open('Ungültiger PIN','', {duration: 4000});
+            this.snackBar.open('Ungültiger PIN', '', {duration: 4000});
             break;
           default:
             this.snackBar.open('Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später erneut.',

@@ -17,10 +17,10 @@ import { FormatTemperaturePipe } from './pipes/FormatTempPipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { SettingsComponent } from './components/settings/settings.component';
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { FormsModule } from "@angular/forms";
-import { MatInputModule } from "@angular/material/input";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function playerFactory(): any {

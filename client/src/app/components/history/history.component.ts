@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import Measuring from '../../model/measuring';
 import { AnimationOptions } from 'ngx-lottie';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-history',

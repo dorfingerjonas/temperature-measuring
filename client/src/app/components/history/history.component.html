@@ -1,15 +1,15 @@
-<ng-lottie *ngIf="showLoading" [options]="options"></ng-lottie>
+<ng-lottie *ngIf='showLoading' [options]='options'></ng-lottie>
 
-<div *ngIf="!showLoading">
+<div *ngIf='!showLoading'>
   <h2>History</h2>
 
-  <div *ngFor="let m of measures">
+  <div *ngFor='let m of measures'>
     <p>{{ m.temperature | formatTemperature }} °C</p>
     <p>{{ m.timestamp.toString() | formatDate }}</p>
   </div>
 
-  <button mat-icon-button id="backButton">
-    <mat-icon (click)="back()">arrow_back</mat-icon>
+  <button mat-icon-button id='backButton'>
+    <mat-icon (click)='back()'>arrow_back</mat-icon>
   </button>
 
 </div>

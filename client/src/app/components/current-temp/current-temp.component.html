@@ -1,6 +1,6 @@
-<ng-lottie *ngIf="showLoading" [options]="options"></ng-lottie>
+<ng-lottie *ngIf='showLoading' [options]='options'></ng-lottie>
 
-<div *ngIf="!showLoading" id="temperature-wrapper">
+<div *ngIf='!showLoading' id='temperature-wrapper'>
   <h2>Aktuelle Temperatur</h2>
 
   <div>
@@ -9,17 +9,17 @@
   </div>
 </div>
 
-<button *ngIf="!showLoading" mat-icon-button [matMenuTriggerFor]="menu">
+<button *ngIf='!showLoading' mat-icon-button [matMenuTriggerFor]='menu'>
   <mat-icon>more_vert</mat-icon>
 </button>
 
-<mat-menu #menu="matMenu" xPosition="before" yPosition="above">
-  <button mat-menu-item routerLink="history">
+<mat-menu #menu='matMenu' xPosition='before' yPosition='above'>
+  <button mat-menu-item routerLink='history'>
     <mat-icon>history</mat-icon>
     <span>History</span>
   </button>
 
-  <button mat-menu-item routerLink="settings">
+  <button mat-menu-item routerLink='settings'>
     <mat-icon>settings</mat-icon>
     <span>Einstellungen</span>
   </button>
