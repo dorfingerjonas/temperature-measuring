@@ -19,13 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
         working-directory: client
-      - name: Decrypt environment file
-        uses: zgosalvez/github-actions-decrypt-secrets@v1
-        with:
-          secrets_file: client/src/environments/environment.prod.ts.gpg
-          map: 'SECRET_PASSWORD=PASSWORD,PASSPHRASE=passphrase'
-        env:
-          GPG_PASSPHRASE: ${{ secrets.DECRYPTION_KEY }}
       - name: Build
         run: npm run build
         working-directory: client
