@@ -39,8 +39,6 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: dist
-      - name: List current directory
-        run: ls dist
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
