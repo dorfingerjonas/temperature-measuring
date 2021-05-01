@@ -16,6 +16,11 @@ import { FormatDatePipe } from './pipes/FormatDatePipe';
 import { FormatTemperaturePipe } from './pipes/FormatTempPipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { SettingsComponent } from './components/settings/settings.component';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { FormsModule } from "@angular/forms";
+import { MatInputModule } from "@angular/material/input";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 export function playerFactory(): any {
   return player;
@@ -27,17 +32,22 @@ export function playerFactory(): any {
     CurrentTempComponent,
     HistoryComponent,
     FormatDatePipe,
-    FormatTemperaturePipe
+    FormatTemperaturePipe,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'temperature'),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    MatInputModule,
+    MatSnackBarModule,
     LottieModule.forRoot({player: playerFactory})
   ],
   providers: [],
