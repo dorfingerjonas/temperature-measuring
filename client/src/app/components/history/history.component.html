@@ -3,10 +3,7 @@
 <div *ngIf='!showLoading'>
   <h2>History</h2>
 
-  <div *ngFor='let m of measures'>
-    <p>{{ m.temperature | formatTemperature }} °C</p>
-    <p>{{ m.timestamp.toString() | formatDate }}</p>
-  </div>
+  <app-chart [name]="currentDate" [measures]="getMeasuresOfCurrentDay()"></app-chart>
 
   <button mat-icon-button id='backButton'>
     <mat-icon (click)='back()'>arrow_back</mat-icon>
