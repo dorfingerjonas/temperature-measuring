@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ChartComponent } from './components/history/chart/chart.component';
 
 export function playerFactory(): any {
   return player;
@@ -34,7 +35,8 @@ export function playerFactory(): any {
     HistoryComponent,
     FormatDatePipe,
     FormatTemperaturePipe,
-    SettingsComponent
+    SettingsComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
