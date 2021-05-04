@@ -1,9 +1,16 @@
 <ng-lottie *ngIf='showLoading' [options]='options'></ng-lottie>
 
-<div *ngIf='!showLoading'>
+<div *ngIf='!showLoading' id="history">
   <h2>History</h2>
 
-  <app-chart [name]="currentDate" [measures]="getMeasuresOfCurrentDay()"></app-chart>
+  <mat-form-field>
+    <mat-select (selectionChange)="changeDetailDay()" [(ngModel)]="currentDate">
+      <mat-option *ngFor="let d of days" [value]="d">{{ d }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-chart [id]="'chart1'" [measures]="currentDay" [name]="currentDate"></app-chart>
+  <app-chart [id]="'chart2'" [measures]="dailyMaxTemperature" [name]="'Tageshöchstwerte'"></app-chart>
 
   <button mat-icon-button id='backButton'>
     <mat-icon (click)='back()'>arrow_back</mat-icon>
