@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import Measuring from '../model/measuring';
-import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 import ChartData from "../model/chart-data";
 
 @Injectable({
