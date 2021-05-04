@@ -1,8 +1,13 @@
-#chart-wrapper {
-  display: block;
+:host {
+  margin-bottom: 5vh;
 }
 
 canvas {
-  width: 50vw;
-  height: 50vh;
+  width: 40vw;
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+  canvas {
+    width: 90vw;
+  }
 }
