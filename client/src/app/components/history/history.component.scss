@@ -5,6 +5,10 @@
   align-items: center;
   flex-direction: column;
 
+  ng-lottie {
+    height: 100%;
+  }
+
   #history {
     margin-top: 10vh;
   }
