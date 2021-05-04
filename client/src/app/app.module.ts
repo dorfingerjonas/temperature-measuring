@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ChartComponent } from './components/history/chart/chart.component';
+import { MatSelectModule } from "@angular/material/select";
 
 export function playerFactory(): any {
   return player;
@@ -50,6 +51,7 @@ export function playerFactory(): any {
     MatMenuModule,
     MatButtonModule,
     MatInputModule,
+    MatSelectModule,
     MatSnackBarModule,
     LottieModule.forRoot({player: playerFactory}),
     ServiceWorkerModule.register('ngsw-worker.js', {
