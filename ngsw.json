@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1620134365028,
+  "timestamp": 1620297956620,
   "index": "/temperature-measuring/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/temperature-measuring/4.f2ae2d9a45c1e0ae3dac.js",
         "/temperature-measuring/favicon.ico",
         "/temperature-measuring/index.html",
-        "/temperature-measuring/main.9d50e002e95177736e11.js",
+        "/temperature-measuring/main.41e9062152a85e144c63.js",
         "/temperature-measuring/manifest.webmanifest",
         "/temperature-measuring/polyfills.00096ed7d93ed26ee6df.js",
         "/temperature-measuring/runtime.737d3b70d67c9072069d.js",
@@ -62,8 +62,8 @@
     "/temperature-measuring/assets/icons/icon-72x72.png": "9ad97a077bd61a82b51626849f0a7a6349f77655",
     "/temperature-measuring/assets/icons/icon-96x96.png": "cadedfb325faf43cc58134fe7a0dd723aaab1fc2",
     "/temperature-measuring/favicon.ico": "7eaba77b2383c47c6442794b3ff03fecad1ef512",
-    "/temperature-measuring/index.html": "d2a9ee1a699d53ed575b120b6a2ded5fd1188512",
-    "/temperature-measuring/main.9d50e002e95177736e11.js": "76b18c48b11fa28a08380071f449ebfb5c74526a",
+    "/temperature-measuring/index.html": "eed7db1aa914d08f21bb32bf8b43d3fdf4affd86",
+    "/temperature-measuring/main.41e9062152a85e144c63.js": "9d1e7f7a52eec175fb0ece0e12b4a58a47887a6b",
     "/temperature-measuring/manifest.webmanifest": "91c2fe8afc4d3f653a2f5d7adab6f10369e68ff1",
     "/temperature-measuring/polyfills.00096ed7d93ed26ee6df.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "/temperature-measuring/runtime.737d3b70d67c9072069d.js": "707486f64caac22fa16edeb146a910ffb064bca1",
