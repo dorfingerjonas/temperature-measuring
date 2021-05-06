@@ -35,11 +35,20 @@ export class ChartComponent implements OnInit, OnChanges {
               }]
             },
             options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    stepSize: 0.5,
+                    callback: value => `${ value } °C`
+                  }
+                }]
+              },
               tooltips: {
                 callbacks: {
                   label: i => `${ i.yLabel } °C`
                 }
-              }
+              },
+              responsive: true
             }
           });
         }
