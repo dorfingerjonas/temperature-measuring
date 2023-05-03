@@ -12,6 +12,8 @@
   "author": "Jonas Dorfinger",
   "license": "MIT",
   "dependencies": {
+    "firebase-admin": "^10.2.0",
+    "glob": "^7.1.6"
   },
   "devDependencies": {
     "@types/node": "^16.10.1",
