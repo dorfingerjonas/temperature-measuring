@@ -1,62 +1,55 @@
+const schedule = require('node-schedule');
 const admin = require('firebase-admin');
 const glob = require('glob');
 const fs = require('fs');
 
 admin.initializeApp({
-    credential: admin.credential.cert(require('../firebasekey.json')),
-    databaseURL: 'https://multiple-projects-9f123.firebaseio.com'
+  credential: admin.credential.cert(require('../firebasekey.json')),
+  databaseURL: 'https://multiple-projects-9f123.firebaseio.com'
 });
 
 const db = admin.database();
 const baseRef = db.ref('temperature');
 
-let interval: NodeJS.Timer;
-
 glob('/sys/bus/w1/devices/28*/w1*', (err: any, files: any) => {
-    if (!err && files[0]) {
-        interval = createInterval(30, files[0]);
+  if (!err && files[0]) {
+    schedule.scheduleJob('*/5 * * * *', () => {
+      baseRef.child('currentTemperature').set(readTemperature(files[0]));
+    });
 
-        console.log('Started measuring ...');
+    schedule.scheduleJob('*/30 * * * *', () => {
+      const { timestamp, temperature }: Measurement = readTemperature(files[0]);
 
-        baseRef.child('interval').on('value', (snapshot: any) => {
-            clearInterval(interval);
+      baseRef.child(`history/${ timestamp }`).set({
+        timestamp,
+        temperature
+      });
+    });
 
-            interval = createInterval(parseFloat(snapshot.val()), files[0]);
-        });
-    } else {
-        console.error(err);
-    }
+    console.log('Started measuring ...');
+  }
 });
 
-function createInterval(delay: number, filename: string) {
-    return setInterval(() => {
-        fs.readFile(filename, {encoding: 'utf-8'}, (err: any, content: string) => {
-            if (!err) {
-                const timestamp = Date.now();
-                const temperature = formatTemperature(parseInt(content.split('t=')[1]) / 1000);
+function readTemperature(filename: string): Measurement {
+  const content = fs.readFileSync(filename, { encoding: 'utf-8' });
 
-                baseRef.child('currentTemperature').set({
-                    timestamp,
-                    temperature
-                });
-
-                baseRef.child(`history/${timestamp}`).set({
-                    timestamp,
-                    temperature
-                });
-            } else {
-                console.error(err);
-            }
-        });
-    }, delay * 1000 * 60);
+  return {
+    timestamp: Date.now(),
+    temperature: formatTemperature(parseInt(content.split('t=')[1]) / 1000)
+  };
 }
 
 function formatTemperature(temperature: number): number {
-    const tempParts = temperature.toString().split('.');
+  const tempParts = temperature.toString().split('.');
 
-    if (tempParts.length > 1) {
-        return parseFloat(`${tempParts[0]}.${Math.round(parseFloat(tempParts[1]) / 100)}`);
-    } else {
-        return temperature;
-    }
+  if (tempParts.length > 1) {
+    return parseFloat(`${ tempParts[0] }.${ Math.round(parseFloat(tempParts[1]) / 100) }`);
+  } else {
+    return temperature;
+  }
+}
+
+interface Measurement {
+    timestamp: number;
+    temperature: number;
 }
